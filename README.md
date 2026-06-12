@@ -1,4 +1,4 @@
-# code_review
+# Code review
 
 Una semplice dimostrazione di code review su un'applicazione vue
 
@@ -10,13 +10,13 @@ una "UserDashboard" che recupera una lista di utenti da un'API fittizia, permett
 
 ## Review
 
-review fatta a mano
+Review fatta a mano
 
-su `app.vue` si trovano dei brevi commenti che evidenziano gli errori o le creticità nel codice, che sono approfondite nel file `review.md` e nel quale veranno anche proposte le soluzioni
+su `app.vue` si trovano dei brevi commenti che evidenziano gli errori o le creticità nel codice, che sono approfondite nel file `review.md`, nel quale sono proposti eventuali suggerimenti o soluzioni.
 
 ### Struttura file `review.md`
 
 Ogni paragrafo è caratterizzato da:
 
-- `numero di linea` _riferito ad app.vue_, che indica appunto la linea al quale si trova la creticità.
-- spiegazione ed eventuale soluzione proposta.
+- `numero di riga` _riferito ad app.vue_, che indica appunto la linea al quale si trova la creticità.
+- spiegazione dell'errore ed eventuale soluzione proposta.

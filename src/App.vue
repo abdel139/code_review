@@ -8,18 +8,22 @@ defineProps({
 
 // Stato reattivo
 const users = ref([])
+// REVIEW : filteredUsers è una ref, si dichiara come const
 let filteredUsers = ref([])
+// REVIEW : isLoading deve essere inizializzata a true
 const isLoading = ref(false)
 const error = ref(null)
 const searchFilter = ref('')
 const favoriteCount = ref(0)
 
+// REVIEW : codice inutilizzato
 const formState = reactive({
   username: '',
   email: '',
 })
 
 // Recupero dei dati all'avvio
+// REVIEW: fetch direttamente nel blocco steup
 fetch('https://jsonplaceholder.typicode.com/users')
   .then((response) => {
     if (!response.ok) {
@@ -37,6 +41,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
   })
 
 // Funzione per filtrare (chiamata dall'input)
+// REVIEW filtrato in modo imperativo
 function applyFilter() {
   console.log('Filtering with:', searchFilter.value)
 
@@ -47,6 +52,7 @@ function applyFilter() {
 
   filteredUsers.value = []
   for (let i = 0; i < users.value.length; i++) {
+    // REVIEW case-sensivity non gestita
     if (users.value[i].name.includes(searchFilter.value)) {
       filteredUsers.value.push(users.value[i])
     }
@@ -68,6 +74,7 @@ function toggleFavorite(user) {
 }
 
 // Mostra un alert ogni volta che il conteggio cambia
+// REVIEW : non serve, c'è gia il conteggio mostrato sulla pagina
 watch(favoriteCount, (newCount) => {
   if (newCount > 0) {
     alert('Ora hai ' + newCount + ' utenti preferiti!')
@@ -77,6 +84,7 @@ watch(favoriteCount, (newCount) => {
 
 <template>
   <div class="user-dashboard">
+    <!-- REVIEW: title = undefined, tag vuoto -->
     <h1>{{ title }}</h1>
     <div class="controls">
       <input
@@ -93,6 +101,7 @@ watch(favoriteCount, (newCount) => {
     <div v-if="error" class="error">{{ error }}</div>
 
     <ul v-if="!isLoading && !error">
+      <!-- REVIEW: manca :key -->
       <li v-for="user in filteredUsers" :class="{ favorite: user.isFavorite }">
         <div class="user-info">
           <h3>{{ user.name }}</h3>
@@ -110,6 +119,7 @@ watch(favoriteCount, (newCount) => {
   </div>
 </template>
 
+<!-- REVIEW: l'app non  è responsive -->
 <style scoped>
 .user-dashboard {
   font-family: sans-serif;
