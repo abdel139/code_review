@@ -1,42 +1,22 @@
 # code_review
 
-This template should help get you started developing with Vue 3 in Vite.
+Una semplice dimostrazione di code review su un'applicazione vue
 
-## Recommended IDE Setup
+## Codice
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Codice generato con AI
 
-## Recommended Browser Setup
+una "UserDashboard" che recupera una lista di utenti da un'API fittizia, permette di filtrarli tramite un campo di ricerca e di contrassegnarli come "preferiti".
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Review
 
-## Type Support for `.vue` Imports in TS
+review fatta a mano
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+su `app.vue` si trovano dei brevi commenti che evidenziano gli errori o le creticità nel codice, che sono approfondite nel file `review.md` e nel quale veranno anche proposte le soluzioni
 
-## Customize configuration
+### Struttura file `review.md`
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Ogni paragrafo è caratterizzato da:
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+- `numero di linea` _riferito ad app.vue_, che indica appunto la linea al quale si trova la creticità.
+- spiegazione ed eventuale soluzione proposta.
